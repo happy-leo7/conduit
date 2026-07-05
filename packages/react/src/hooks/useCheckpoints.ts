@@ -21,7 +21,7 @@ export function useCheckpoints(): CheckpointsView {
 
   const canRevert = useCallback(
     (turnId: string) => store.canRevert(turnId),
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- status 변경 시 재평가
+    // status/turns가 바뀌면 판정이 달라지므로 함께 의존한다.
     [store, status, turns],
   );
   const revert = useCallback((turnId: string) => store.revertToTurn(turnId), [store]);

@@ -284,7 +284,7 @@ describe('reduceEvent', () => {
 
 describe('applyPermissionDecision', () => {
   function stateWithPending(): SessionState {
-    let state = reduceAll(createInitialState(), [
+    const state = reduceAll(createInitialState(), [
       { type: 'turn_start', turnId: 't1' },
       { type: 'message_start', messageId: 'm1', role: 'assistant' },
       {
